@@ -17,6 +17,10 @@ updates:
       # 25 doesn't ship. Release notes fail to render, but only at release time.
       - dependency-name: conventional-changelog-conventionalcommits
         update-types: ['version-update:semver-major']
+      # Types must match the runtime (action.yml `using: node24`, engines ^24).
+      # Bump together with the runtime, not independently.
+      - dependency-name: '@types/node'
+        update-types: ['version-update:semver-major']
     groups:
       dev-dependencies:
         dependency-type: development
